@@ -1,41 +1,69 @@
-
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-
-  :root{
-    --primary-clr: red;
-  }
-
-*{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+/* define vars for the root element */
+:root {
+  --main-bg-color: #f4f4f4;
+  --main-txt-color: #333;
+  --container-width: 90%;
+  --header-bg-color: #333;
+  --header-txt-color: #fff;
 }
 
-body{
-    font-size: .9rem;
-    display: grid;
-    place-items: center;
-    color: var(--primary-clr);
+body {
+  background: var(--main-bg-color);
+  color: var(--main-txt-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
 }
 
-.intro{
-    margin: 20px 25px;
+header {
+  background: var(--header-bg-color);
+  color: var(--header-txt-color);
+  margin: 0;
+  padding: 0;
 }
-.button{
-    display: flex;
-    text-decoration: none;
-    padding: 20px 0;
-    
-}
-
-.sales-point{
-    margin: 30px 25px;
+.container {
+  width: var(--container-width);
+  margin: 20px auto;
 }
 
-.first-col{
-    display: flex;
+.grid {
+  --gap: 20;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: calc(var(--gap) *1px);
+  align-items: center;
+}
+/* define box vars */
+.box {
+  --box-bg-color: #ddd;
+  --box-main-color: #06e;
+  --box-padding: 5px 10px;
+  --box-shadow-v-offset: 10px;
+  --box-shadow-h-blur: 5px;
+  --box-shadow-blur: 5px;
 }
 
-.second-col{
-    display: flex;
+.box {
+  background: var(--box-bg-color);
+  padding: var(--box-padding);
+  border: 1px solid var(--box-main-color);
+  box-shadow: var(--box-shadow-v-offset)
+   var(--box-shadow-h-blur)
+   var(--box-shadow-blur)
+   var(--box-main-color);
+}
+
+.box h1 {
+  color: var(--box-main-color);
+}
+
+/* overwite */
+.box p{
+  --box-main-color: #333;
+  color: var(--box-main-color);
+}
+
+/* browser fallback */
+.box p{
+  /* color: var(--box-man-color, red); */
 }
